@@ -13,6 +13,11 @@ mQTL <- as.data.frame(data_genome[3])
 ## read in reg file
 reg_file <- read.table('moloc_reg_file.txt', header=T)
 
+## other functions
+source("scripts/functions_moloc_overlap.R")
+source("scripts/functions_moloc.R")
+source("scripts/MR_base_functions.R")
+
 ## Create bed file with combination of ProbeIDs
 library(GenomicRanges)
 methyl_table <- DT[, list(CHR= unique(CHR), START = min(POS), STOP = max(POS)), by = ProbeID]
